@@ -15,17 +15,15 @@ $(document).ready(function () {
     // Update the h4 tag inside the div Amenities with the list of Amenities checked
     $('div.amenities h4').text(Object.values(amenityList).join(', '));
   });
-  apiStatus();
 });
 
-$(function apiStatus() {
-  const apiUrl = "http://0.0.0.0:5001/api/v1/status/";
+$(function () {
+  const apiUrl = 'http://0.0.0.0:5001/api/v1/status/';
   $.get(apiUrl, function (data, status) {
-    if (data.status === "OK" && status === "success") {
-      $("#api_status").addClass("available");
+    if (data.status === 'OK' && status === 'success') {
+      $('#api_status').addClass('available');
     } else {
-      $("#api_status").removeClass("available");
+      $('#api_status').removeClass('available');
     }
   });
 });
-
